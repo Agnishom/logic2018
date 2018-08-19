@@ -1,12 +1,14 @@
+#+TITLE: Additional Problems
+
 * Problem 7
 
    + Call a formula using $\lor$, $\land$ and $\neg$ to be in negative normal form if negations are only applied directly on propositional atoms. For example, $p \land \neg q$ is in negative normal form, but $\neg(p \land q)$ is not.
 
-   + Mimic the inductive definition of well formed formulae $\Phi$ in class to give a formal definition of formulae in negative normal form.
+   + Mimic the inductive definition of well formed formulae $\Phi$ in class to give a formal definition of formulae in negative normal form. Do this by first defining literals which are just propositions or negations thereof, and then extending the language to contain formulae involving $\lor$ and $\land$.
    
    + Show that you can convert a well formed formula comprising $\lor$, $\land$ and $\neg$ to a negative normal form so that they "are the same" according to your defintion in problem 2. What is the complexity of this conversion?
 
-   + Given a formula $\alpha$ in negative normal form and a valuation $v$, define $pos(v, \alpha)$ to be the (multi)set of propositional atoms which are evaluated to true under $v$. Suppose $\alpha$ and $\beta$ are two formulae such that $pos(v, \alpha) \subseteq pos(v, \beta)$. Show that $v \models \alpha \implies v \models \beta$. 
+   + Given a formula $\alpha$ in negative normal form and a valuation $v$. Define $pos(v, \alpha)$ to be the set of literals which are evaluated to true under $v$. Suppose $\alpha$ and $\beta$ are two formulae such that $pos(v, \alpha) \subseteq pos(v, \beta)$. Show that $v \models \alpha \implies v \models \beta$. 
 
 * Problem 8
 
