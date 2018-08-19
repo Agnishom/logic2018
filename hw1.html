@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2018-08-19 Sun 19:56 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="agnishom">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem 7</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Call a formula using \(\lor\), \(\land\) and \(\neg\) to be in negative normal form if negations are only applied directly on propositional atoms. For example, \(p \land \neg q\) is in negative normal form, but \(\neg(p \land q)\) is not.
+</li>
+
+<li>Mimic the inductive definition of well formed formulae \(\Phi\) in class to give a formal definition of formulae in negative normal form.
+</li>
+
+<li>Show that you can convert a well formed formula comprising \(\lor\), \(\land\) and \(\neg\) to a negative normal form so that they "are the same" according to your defintion in problem 2. What is the complexity of this conversion?
+</li>
+
+<li>Given a formula \(\alpha\) in negative normal form and a valuation \(v\), define \(pos(v, \alpha)\) to be the (multi)set of propositional atoms which are evaluated to true under \(v\). Suppose \(\alpha\) and \(\beta\) are two formulae such that \(pos(v, \alpha) \subseteq pos(v, \beta)\). Show that \(v \models \alpha \implies v \models \beta\). 
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Problem 8</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+We'll consider a proof system of strings involving strings formed with the letters <code>M</code>, <code>I</code> and <code>U</code>.
+</p>
+
+<ul class="org-ul">
+<li>The system contains four inference rules
+</li>
+</ul>
+
+<p>
+\[ \begin{matrix}
+\dfrac{x\texttt{I}}{x\texttt{IU}} & \dfrac{\texttt{M}x}{\texttt{M}xx}\\
+& \\
+\dfrac{x\texttt{III}y}{x\texttt{U}y} & \dfrac{x\texttt{UU}y}{xy}
+\end{matrix} \]
+</p>
+
+<ul class="org-ul">
+<li>and one axiom
+</li>
+</ul>
+
+<p>
+\[ \dfrac{}{\texttt{MI}} \]
+</p>
+
+<p>
+The problem is to figure out if \(\texttt{MU}\) is a theorem of this system.
+</p>
+
+<p>
+(Clarification: \(x\) and \(y\) are any (possibly empty) words in the alphabet <code>M</code>, <code>I</code> and <code>U</code>. The inference rules must be applied to a word as a whole and not a subword.)
+</p>
+
+<hr >
+
+<p>
+To illustrate an example, \(\texttt{MIUIU}\) is a theorem in this system, because we have the following proof:
+</p>
+
+<p>
+\[\texttt{MI} \xrightarrow[(1)]{} \texttt{MIU} \xrightarrow[(2)]{} \texttt{MIUIU}\] 
+</p>
+
+<p>
+where the numbers on the arrows are the numbers of the inference rules used.
+</p>
+
+<p>
+The above puzzle appears in <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Godel, Escher, Bach</a> where the author uses it to contrast the philosophical distinction between syntactic and semantic levels of interpretations. To quote wikipedia:
+</p>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+It also demonstrates the contrast between interpretation on the "syntactic" level of symbols and on the "semantic" level of meanings. On the syntactic level, there is no knowledge of the MU puzzle's insolubility. The system does not refer to anything: it is simply a game involving meaningless strings. Working within the system, an algorithm could successively generate every valid string of symbols in an attempt to generate MU, and though it would never succeed, it would search forever, never deducing that the quest was futile. For a human player however, after a number of attempts, one soon begins to suspect that the puzzle may be impossible. One then "jumps out of the system" and starts to reason about the system, rather than working within it. Eventually, one realises that the system is in some way about divisibility by three. This is the "semantic" level of the system — a level of meaning that the system naturally attains. On this level, the MU puzzle can be seen to be impossible. 
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Problem 9</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Let \(X\) be a set. \(\mathcal{F}\), a subset of the powerset of \(X\) is said to be a <i>field of sets</i> over \(X\) if \(\mathcal{F}\) is closed under complementation, finite unions and intersection. 
+</p>
+
+<p>
+Given a field of sets over some set \(X\), we define an alternate semantics for propositional logic as follows:
+</p>
+
+<ul class="org-ul">
+<li>A valuation \(v : PV \to \mathcal{F}\) is a function that assigns to each propositional atom an element of \(\mathcal{F}\)
+</li>
+<li>We extend \(v\) to \(\hat{v} : \Phi \to \mathcal{F}\) as follows:
+<ul class="org-ul">
+<li>\(\hat{v}(p) = v(p)\) where \(p \in PV\)
+</li>
+<li>\(\hat{v}({\neg \varphi}) = X \setminus \hat{v}({\varphi})\)
+</li>
+<li>\(\hat{v}({\varphi \lor \psi}) = \hat{v}(\varphi) \cup \hat{v}(\psi)\)
+</li>
+<li>\(\hat{v}({\varphi \land \psi}) = \hat{v}(\varphi) \cap \hat{v}(\psi)\)
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+We say that \(v \models \varphi\) iff \(\hat{v}(\varphi) = X\). As usual, we say \(\varphi\) is valid iff \(v \models \varphi\) for all valuations \(v\).
+</p>
+
+<p>
+Show that the usual semantics is equivalent to this semantics in the sense that \(\varphi\) is valid under the usual semantics if and only if \(\varphi\) is valid under this semantics.</p>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Problem 7</a></li>
+<li><a href="#sec-2">2. Problem 8</a></li>
+<li><a href="#sec-3">3. Problem 9</a></li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: agnishom</p>
+<p class="date">Created: 2018-08-19 Sun 19:56</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="http://orgmode.org">Org-mode</a> 9.1.13)</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+* Problem 7
+
+   + Call a formula using $\lor$, $\land$ and $\neg$ to be in negative normal form if negations are only applied directly on propositional atoms. For example, $p \land \neg q$ is in negative normal form, but $\neg(p \land q)$ is not.
+
+   + Mimic the inductive definition of well formed formulae $\Phi$ in class to give a formal definition of formulae in negative normal form.
+   
+   + Show that you can convert a well formed formula comprising $\lor$, $\land$ and $\neg$ to a negative normal form so that they "are the same" according to your defintion in problem 2. What is the complexity of this conversion?
+
+   + Given a formula $\alpha$ in negative normal form and a valuation $v$, define $pos(v, \alpha)$ to be the (multi)set of propositional atoms which are evaluated to true under $v$. Suppose $\alpha$ and $\beta$ are two formulae such that $pos(v, \alpha) \subseteq pos(v, \beta)$. Show that $v \models \alpha \implies v \models \beta$. 
+
+* Problem 8
+
+We'll consider a proof system of strings involving strings formed with the letters ~M~, ~I~ and ~U~.
+
+ + The system contains four inference rules
+
+$$ \begin{matrix}
+\dfrac{x\texttt{I}}{x\texttt{IU}} & \dfrac{\texttt{M}x}{\texttt{M}xx}\\
+& \\
+\dfrac{x\texttt{III}y}{x\texttt{U}y} & \dfrac{x\texttt{UU}y}{xy}
+\end{matrix} $$
+
+ + and one axiom
+
+$$ \dfrac{}{\texttt{MI}} $$
+
+The problem is to figure out if $\texttt{MU}$ is a theorem of this system.
+
+(Clarification: $x$ and $y$ are any (possibly empty) words in the alphabet ~M~, ~I~ and ~U~. The inference rules must be applied to a word as a whole and not a subword.)
+
+-----
+
+To illustrate an example, $\texttt{MIUIU}$ is a theorem in this system, because we have the following proof:
+
+$$\texttt{MI} \xrightarrow[(1)]{} \texttt{MIU} \xrightarrow[(2)]{} \texttt{MIUIU}$$ 
+
+where the numbers on the arrows are the numbers of the inference rules used.
+
+The above puzzle appears in [[https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach][Godel, Escher, Bach]] where the author uses it to contrast the philosophical distinction between syntactic and semantic levels of interpretations. To quote wikipedia:
+
+#+BEGIN_QUOTE
+
+It also demonstrates the contrast between interpretation on the "syntactic" level of symbols and on the "semantic" level of meanings. On the syntactic level, there is no knowledge of the MU puzzle's insolubility. The system does not refer to anything: it is simply a game involving meaningless strings. Working within the system, an algorithm could successively generate every valid string of symbols in an attempt to generate MU, and though it would never succeed, it would search forever, never deducing that the quest was futile. For a human player however, after a number of attempts, one soon begins to suspect that the puzzle may be impossible. One then "jumps out of the system" and starts to reason about the system, rather than working within it. Eventually, one realises that the system is in some way about divisibility by three. This is the "semantic" level of the system — a level of meaning that the system naturally attains. On this level, the MU puzzle can be seen to be impossible. 
+
+#+END_QUOTE
+
+* Problem 9
+
+Let $X$ be a set. $\mathcal{F}$, a subset of the powerset of $X$ is said to be a /field of sets/ over $X$ if $\mathcal{F}$ is closed under complementation, finite unions and intersection. 
+
+Given a field of sets over some set $X$, we define an alternate semantics for propositional logic as follows:
+
+ + A valuation $v : PV \to \mathcal{F}$ is a function that assigns to each propositional atom an element of $\mathcal{F}$
+ + We extend $v$ to $\hat{v} : \Phi \to \mathcal{F}$ as follows:
+   + $\hat{v}(p) = v(p)$ where $p \in PV$
+   + $\hat{v}({\neg \varphi}) = X \setminus \hat{v}({\varphi})$
+   + $\hat{v}({\varphi \lor \psi}) = \hat{v}(\varphi) \cup \hat{v}(\psi)$
+   + $\hat{v}({\varphi \land \psi}) = \hat{v}(\varphi) \cap \hat{v}(\psi)$
+
+We say that $v \models \varphi$ iff $\hat{v}(\varphi) = X$. As usual, we say $\varphi$ is valid iff $v \models \varphi$ for all valuations $v$.
+
+Show that the usual semantics is equivalent to this semantics in the sense that $\varphi$ is valid under the usual semantics if and only if $\varphi$ is valid under this semantics.
