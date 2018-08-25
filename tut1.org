@@ -1,3 +1,4 @@
+#+BEGIN_COMMENT
 * Some Modelling Problems
 
 For each of the following situations, design an algorithm that produces a formula which is satisfiable if and only if the situation can be resolved.
@@ -8,6 +9,7 @@ For each of the following situations, design an algorithm that produces a formul
    - B does not want to sit to the right of C.
 2. A problem of covering $m$ subjects with $k$ teachers maybe defined as follows. Let $T: \{T_1, \cdots T_n\}$ be a set of teachers, and $S: \{S_1, \cdots S_m\}$ be a set of subjects. Each teacher \(t \in T\) can teach some subset \(S_t \subseteq S\) of the subjects S. Given a natural number \(k \leq n\), is there a subset of size $k$ of te teachers that together cover all the $m$ subjects?
 3. Given a graph, output a propositional formula that is satisfiable if and only if the graph has a hamiltonian cycle
+#+END_COMMENT
 
 * Solutions to Tutorial Problems
 
