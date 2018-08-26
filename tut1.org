@@ -24,9 +24,9 @@ For each of the following situations, design an algorithm that produces a formul
 
 ($1 \implies 2$)
 
-Suppose that $\alpha$ is valid in the field of sets sense. Now, suppose $X$ is some set and $\mathcal{F} = \{\phi, X\}$. Let $v$ be any valuation in $PV \to \{\top, \bot\}$. We construct $u : PV \to \mathcal{F}$, such that $u(p) = X$ if $v(p) = \top$ and $u(w) = \phi$ otherwise, for all $p \in PV$. If we show that $v \models \alpha$ iff $u \models \alpha$, we will be done since we know that $u$ indeed satisfies $\alpha$ (because $\alpha$ is valid in the field of sets sense).
+Suppose that $\alpha$ is valid in the field of sets sense. Now, suppose $X$ is some set and $\mathcal{F} = \{\phi, X\}$. Let $v$ be any valuation in $PV \to \{\top, \bot\}$. We construct $u : PV \to \mathcal{F}$, such that $u(p) = X$ if $v(p) = \top$ and $u(p) = \phi$ otherwise, for all $p \in PV$. If we show that $v \models \alpha$ iff $u \models \alpha$, we will be done since we know that $u$ indeed satisfies $\alpha$ (because $\alpha$ is valid in the field of sets sense).
 
-So, we show that $u \models \alpha$ if and only if $v \models \alpha$. The proof is by structure on the induction of $\alpha$.
+So, we show that $u \models \alpha$ if and only if $v \models \alpha$. The proof is by induction on the structure of $\alpha$.
 
 1. If $\alpha$ is a propositional variable, then the claim holds by construction of $u$.
 2. If $\alpha = \varphi \lor \psi$, then $\hat{u}(\alpha) = \hat{u}(\varphi) \cup \hat{u}(\psi)$. Suppose $v \models \varphi \lor \psi$. Then, without loss of generality, say $v \models \varphi$. But by induction hypothesis, this means $u \models \varphi$ and hence $\hat{u}(\varphi) = X = \hat{u}(\varphi) \cup \hat{u}(\psi)$, and thus $u \models \varphi \lor \psi$. The converse direction is also similar.
@@ -41,3 +41,5 @@ By semantics, our assumption means that there is an $x \in X$ such that $x \not 
 
 Now, show by induction on the structure of formulae that for any well formed formula $\varphi$, $\hat{v}(\varphi) = \top$ if and only if $x \in \hat{u}(\varphi)$. But this means that $v \not \models \varphi$ because of the choice of $x$. $\blacksquare$
    
+ 
+ 
